@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical">
+    <TextView
+            android:id="@+id/searchHintTitle"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="24sp"
+            android:text="@string/search_hint"
+    />
+    <EditText
+            android:id="@+id/searchInputBox"
+            android:layout_below="@id/searchHintTitle"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/searchResultList"
+            android:layout_below="@id/searchInputBox"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>

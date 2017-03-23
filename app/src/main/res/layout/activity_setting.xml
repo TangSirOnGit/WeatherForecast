@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/weatherMainPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/default_bg_image"
+        tools:context="com.tv.forecast.ui.CitySettingActivity">
+
+    <com.tv.forecast.ui.view.SavedCityView
+            android:id="@+id/savedCityView"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content">
+    </com.tv.forecast.ui.view.SavedCityView>
+
+    <ImageView
+            android:id="@+id/settingPageSpacer"
+            android:layout_toRightOf="@id/savedCityView"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:background="@drawable/image_header_vertical_seperator"/>
+
+    <com.tv.forecast.ui.view.CitySearchView
+            android:id="@+id/citySearchView"
+            android:layout_toRightOf="@id/settingPageSpacer"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:layout_width="600dp"
+            android:layout_height="match_parent">
+
+    </com.tv.forecast.ui.view.CitySearchView>
+
+</RelativeLayout>

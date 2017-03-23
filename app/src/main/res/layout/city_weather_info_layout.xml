@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/errorHint"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textSize="40sp"
+            android:text="@string/error_query_data_fail"
+            android:textColor="@android:color/white"/>
+
+    <LinearLayout
+            android:id="@+id/weatherContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/horizon_spacing"
+            android:layout_marginRight="@dimen/horizon_spacing"
+            android:orientation="vertical">
+        <RelativeLayout
+                android:id="@+id/weatherInfoHeader"
+                android:layout_marginLeft="@dimen/horizon_content_spacing"
+                android:layout_marginRight="@dimen/horizon_content_spacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/headCityName"
+                    android:layout_marginTop="@dimen/vertical_content_spacing"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textSize="70sp"
+                    android:textColor="@android:color/white"/>
+
+
+            <RelativeLayout
+                    android:id="@+id/currentWeather"
+                    android:layout_marginTop="@dimen/vertical_content_spacing"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        android:id="@+id/currentTemperature"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="70sp"
+                        android:textColor="@android:color/white"/>
+                <TextView
+                        android:id="@+id/currentWeatherType"
+                        android:layout_below="@id/currentTemperature"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:textColor="@android:color/white"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/dateAndTempRange"
+                android:layout_marginTop="@dimen/vertical_content_spacing"
+                android:layout_marginLeft="@dimen/horizon_content_spacing"
+                android:layout_marginRight="@dimen/horizon_content_spacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/headDateInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"/>
+
+            <TextView
+                    android:id="@+id/minTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/darker_gray"/>
+
+            <TextView
+                    android:id="@+id/maxTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/minTemp"
+                    android:layout_marginRight="@dimen/temp_horizon_spacing"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"/>
+
+        </RelativeLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+        <android.support.v17.leanback.widget.HorizontalGridView
+                android:id="@+id/hourlyForecast"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+        />
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+        <RelativeLayout
+                android:id="@+id/dailyForecastAndTodaySummary"
+                android:layout_marginTop="@dimen/vertical_content_spacing"
+                android:layout_marginLeft="@dimen/horizon_content_spacing"
+                android:layout_marginRight="@dimen/horizon_content_spacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/dailyForeCast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <ImageView
+                    android:id="@+id/dailySummarySpacer"
+                    android:layout_toRightOf="@id/dailyForeCast"
+                    android:layout_marginLeft="80dp"
+                    android:layout_width="1dp"
+                    android:layout_height="230dp"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/image_header_vertical_seperator"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/todaySummary"
+                    android:layout_toRightOf="@id/dailySummarySpacer"
+                    android:layout_marginLeft="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageView
+                    android:id="@+id/dailySummarySpacer2"
+                    android:layout_toRightOf="@id/todaySummary"
+                    android:layout_marginLeft="80dp"
+                    android:layout_width="1dp"
+                    android:layout_height="230dp"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/image_header_vertical_seperator"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/todayAirQuality"
+                    android:layout_toRightOf="@id/dailySummarySpacer2"
+                    android:layout_marginLeft="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+        <com.tv.forecast.ui.view.MarqueeView
+                android:id="@+id/todaySuggestion"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                app:mvSingleLine="true"/>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,4 +1,36 @@
 <resources>
     <string name="app_name">WeatherForecast</string>
-    <string name="weather_forecast_for_tv">Weather Forecast For TV Box!!</string>
+    <string name="city_name">城市</string>
+    <string name="weather_forecast_for_tv">Just A Demo For TV Box!!</string>
+    <string name="type_and_temperature">%1$s\t%2$s °C</string>
+    <string name="wind_info">风速：%1$s %2$s</string>
+    <string name="humidity">湿度：%1$s%%</string>
+    <string name="air_quality">空气质量：%1$s</string>
+    <string name="feel_like">体感温度：%1$s°</string>
+    <string name="visibility">能见度：%1$s Km</string>
+    <string name="sun_rise_time">日出：%1$s</string>
+    <string name="sun_set_time">日落：%1$s</string>
+    <string name="update_time">%1$s  天气实况</string>
+    <string name="fore_cast_msg">%1$s  白天：%2$s 夜间：%3$s  %4$s %5$s</string>
+    <!--<string name="fore_cast_msg">%1$s\t白天:%2$s </string>-->
+    <string name="date_for_today">%1$s 今天</string>
+    <string name="current_temperature">%1$s°</string>
+    <string name="min_max_temperature">%1$s %2$s</string>
+    <string name="hour">%1$d时</string>
+    <string name="hourly_temperature">%1$s°</string>
+    <string name="last_update_time">更新时间：%1$s°</string>
+    <string name="air_quality_aqi">AQI：%1$s</string>
+    <string name="air_quality_pm25">PM25：%1$s</string>
+    <string name="air_quality_pm10">PM10：%1$s</string>
+    <string name="air_quality_so2">SO2：%1$s</string>
+    <string name="air_quality_no2">NO2：%1$s</string>
+    <string name="air_quality_co">CO：%1$s</string>
+    <string name="air_quality_o3">O3：%1$s</string>
+    <string name="error_query_data_fail">获取天气数据失败，稍后再试！</string>
+    <string name="saved_city_page_title">按确定键删除选定城市！</string>
+    <string name="search_hint">输入拼音首字母，拼音或者城市名称都可以搜索您所在的城市！</string>
+    <string name="more_city">更多城市。。。</string>
+    <string name="town_name_with_city">%1$s (%2$s)</string>
+    <string name="city_name_with_brace">(%1$s)</string>
+    <string name="error_no_city">您还没有选择城市，先去添加一个城市吧！</string>
 </resources>
