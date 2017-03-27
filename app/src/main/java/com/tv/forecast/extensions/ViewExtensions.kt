@@ -1,4 +1,4 @@
-package com.tv.forecast.utils
+package com.tv.forecast.extensions
 
 import android.content.Context
 import android.view.View

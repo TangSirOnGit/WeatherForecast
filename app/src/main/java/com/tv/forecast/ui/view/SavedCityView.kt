@@ -22,7 +22,6 @@ import org.jetbrains.anko.uiThread
 class SavedCityView : RelativeLayout {
     val TAG = "SavedCityView"
 
-
     constructor(context: Context) : super(context) {
         init(null, 0)
     }
@@ -40,8 +39,8 @@ class SavedCityView : RelativeLayout {
         Log.i("SavedCityView","cityItemClicked, city="+city)
         ForecastDb().deleteCityFromSavedTable(city)
         EventBus.getDefault().post(SavedCityUpdatedEvent())
-        //updateSavedCityList()
     }
+
     private fun init(attrs: AttributeSet?, defStyle: Int) {
         LayoutInflater.from(context).inflate(R.layout.saved_city_view_layout, this, true)
         savedCityList.layoutManager = LinearLayoutManager(context)
@@ -51,14 +50,6 @@ class SavedCityView : RelativeLayout {
     fun updateSavedCityList(){
         doAsync{
             val savedCity = ForecastDb().getSavedCity()
-            val cityForAddAction  = City(
-                    id = "",
-                    townName = context.getString(R.string.more_city),
-                    townNameEn = "",
-                    type = 1
-            )
-            //val finalCitys = savedCity.plus(cityForAddAction)
-
             uiThread{
                 savedCityList.adapter = CityAdapter(savedCity,{cityItemClicked(it)})
             }

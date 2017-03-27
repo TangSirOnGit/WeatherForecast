@@ -1,8 +1,5 @@
 package com.tv.forecast.data.db
 
-/**
- * Created by tangsir on 2017/3/25.
- */
 
 object SavedCityTable {
     val NAME = "SavedCityTable"

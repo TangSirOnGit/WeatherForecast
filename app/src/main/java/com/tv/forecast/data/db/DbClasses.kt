@@ -1,8 +1,5 @@
 package com.tv.forecast.data.db
 
-/**
- * Created by tangsir on 2017/3/26.
- */
 class CitySavedInDb (var map: MutableMap<String, Any?>) {
     init {
 

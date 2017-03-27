@@ -11,7 +11,6 @@ import com.tv.forecast.utils.DisplayUtil
 
 class MarqueeView : ViewFlipper {
 
-    //private var notices: MutableList<out CharSequence>? = null
     private var isSetAnimDuration = false
 
     private var interval = 5000

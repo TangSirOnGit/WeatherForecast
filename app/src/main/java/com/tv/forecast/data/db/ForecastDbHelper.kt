@@ -6,9 +6,7 @@ import com.tv.forecast.App
 import com.tv.forecast.utils.FileUtils
 import org.jetbrains.anko.db.*
 
-/**
- * Created by tangsir on 2017/3/25.
- */
+
 class ForecastDbHelper(ctx: Context = App.instance) : ManagedSQLiteOpenHelper(ctx,
         ForecastDbHelper.DB_NAME, null, ForecastDbHelper.DB_VERSION) {
 
