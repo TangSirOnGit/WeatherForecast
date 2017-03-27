@@ -20,7 +20,7 @@
     <string name="hourly_temperature">%1$s°</string>
     <string name="last_update_time">更新时间：%1$s°</string>
     <string name="air_quality_aqi">AQI：%1$s</string>
-    <string name="air_quality_pm25">PM25：%1$s</string>
+    <string name="air_quality_pm25">PM2.5：%1$s</string>
     <string name="air_quality_pm10">PM10：%1$s</string>
     <string name="air_quality_so2">SO2：%1$s</string>
     <string name="air_quality_no2">NO2：%1$s</string>
