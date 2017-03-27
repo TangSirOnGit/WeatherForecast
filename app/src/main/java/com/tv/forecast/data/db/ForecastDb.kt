@@ -27,9 +27,9 @@ class ForecastDb(val dbHelper: ForecastDbHelper = ForecastDbHelper.instance){
     }
 
     fun queryCityByName(cityName: String) = dbHelper.use {
-        val cityRequest = "${CityCodeTable.TOWNENABB} = ?"
+        val cityRequest = "${CityCodeTable.TOWNENABB} = ? OR lower(${CityCodeTable.TOWNEN}) = ? OR ${CityCodeTable.TOWNNAME} = ?"
         val cityResult = select(CityCodeTable.NAME)
-                .whereSimple(cityRequest, cityName)
+                .whereSimple(cityRequest, cityName,cityName,cityName)
                 .parseList { CityCodeInfo(HashMap(it)) }
         cityResult.map { ForecastDataMapper().convertCityFromDb(it) }
     }
