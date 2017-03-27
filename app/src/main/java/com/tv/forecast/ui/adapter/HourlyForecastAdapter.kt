@@ -26,9 +26,13 @@ class HourlyForecastAdapter(val items:List<HourlyForeCast>):
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         fun bindForecast(forecast: HourlyForeCast) {
             with(forecast) {
-                view.hourlyTitle.text = String.format(
-                        view.context.getString(R.string.hour),forecast.hour
-                )
+                if (time.isNotEmpty()){
+                    view.hourlyTitle.text = forecast.time
+                }else{
+                    view.hourlyTitle.text = String.format(
+                            view.context.getString(R.string.hour),forecast.hour)
+                }
+
                 view.hourlyImage.setImageResource(
                         ImageResUtils().getImageResId(forecast.code))
                 view.hourlyMessage.text = String.format(

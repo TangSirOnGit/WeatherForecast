@@ -18,6 +18,7 @@ import com.tv.forecast.event.WeatherUpdatedEvent
 import com.tv.forecast.ui.adapter.DailyForecastAdapter
 import com.tv.forecast.ui.adapter.HourlyForecastAdapter
 import com.tv.forecast.ui.adapter.WeatherDetailAdapter
+import com.tv.forecast.utils.TimeUtils
 import kotlinx.android.synthetic.main.city_weather_info_layout.view.*
 import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.doAsync
@@ -54,10 +55,21 @@ class CityWeatherInfoView(context: Context, val cityAreaCode: String) : Relative
             }
         }
     }
+    fun convertForecastToNow(info: HourlyForeCast) = HourlyForeCast(
+            time = context.getString(R.string.hourly_forecast_now),
+            code = info.code,
+            hour = info.hour,
+            temperature = info.temperature,
+            text = info.text
+    )
 
     fun updateHourlyForecast(hourlyList: List<HourlyForeCast>) {
         hourlyForecast.setNumRows(1)
-        hourlyForecast.adapter = HourlyForecastAdapter(hourlyList)
+        val hourNow = TimeUtils.getCurrentHour()
+        val firstIndex = hourlyList.indexOfFirst { it.hour >=hourNow }
+        val forecastNow = convertForecastToNow(hourlyList[firstIndex])
+        hourlyForecast.adapter = HourlyForecastAdapter(listOf(forecastNow) +
+                hourlyList.slice(firstIndex+1..hourlyList.size-1))
     }
 
     fun updateSuggestion(list: List<Suggestion>) {

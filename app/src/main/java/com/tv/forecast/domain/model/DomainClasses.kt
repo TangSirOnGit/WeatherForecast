@@ -28,7 +28,8 @@ data class HourlyForeCast(
         val text: String,
         val code: Int,
         val temperature: String,
-        //val time: String,
+        val time: String = "",
+        val extraMessage: String = "",
         val hour: Int)
 data class Suggestion(
         val type: Int,
