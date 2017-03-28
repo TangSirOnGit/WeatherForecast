@@ -12,28 +12,31 @@
             android:id="@+id/citiesViewPager"
             android:layout_width="wrap_content"
             android:layout_height="650dp"
-            android:layout_gravity="center" />
-
-    <com.tv.forecast.ui.view.PageIndicatorView
-            android:id="@+id/pageIndicator"
+            android:layout_gravity="center"/>
+    <RelativeLayout
             android:layout_below="@id/citiesViewPager"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="@dimen/horizon_spacing"
-            android:layout_marginRight="@dimen/horizon_spacing"
-            android:gravity="center_horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
+        <com.tv.forecast.ui.view.PageIndicatorView
+                android:id="@+id/pageIndicator"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    </com.tv.forecast.ui.view.PageIndicatorView>
+        </com.tv.forecast.ui.view.PageIndicatorView>
 
-    <Button
-            android:id="@+id/btnSetting"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/horizon_spacing"
-            android:background="@mipmap/ic_settings_applications_white_36dp"
-            android:layout_width="36dp"
-            android:layout_height="36dp"/>
+        <Button
+                android:id="@+id/btnSetting"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/horizon_spacing"
+                android:background="@mipmap/ic_settings_applications_white_36dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"/>
+
+    </RelativeLayout>
+
     <TextView
             android:id="@+id/noCityHintMessage"
             android:layout_centerInParent="true"
