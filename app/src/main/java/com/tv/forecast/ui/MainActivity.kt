@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.ViewPager.OnPageChangeListener
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import com.tv.forecast.R
 import com.tv.forecast.data.db.ForecastDb
@@ -32,14 +33,22 @@ class MainActivity : Activity(), OnPageChangeListener {
         btnSetting.setOnClickListener { gotoSettingActivity() }
     }
 
-    public override fun onStart() {
+    override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
     }
 
-    public override fun onStop() {
+    override fun onStop() {
         super.onStop()
         EventBus.getDefault().unregister(this)
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        Log.i(TAG,"onKeyDown,keyCode="+keyCode+",KeyEvent.KEYCODE_ENTER="+KeyEvent.KEYCODE_ENTER)
+        when(keyCode){
+            KeyEvent.KEYCODE_DPAD_CENTER,KeyEvent.KEYCODE_ENTER -> {gotoSettingActivity(); return true}
+        }
+        return super.onKeyDown(keyCode, event)
     }
 
     fun updateView() {
@@ -91,6 +100,8 @@ class MainActivity : Activity(), OnPageChangeListener {
     }
 
     fun gotoSettingActivity() {
+        Log.i(TAG,"gotoSettingActivity")
+
         val settingIntent = Intent()
         settingIntent.setClassName("com.tv.forecast", "com.tv.forecast.ui.CitySettingActivity")
         startActivityForResult(settingIntent,1)

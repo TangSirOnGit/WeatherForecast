@@ -32,6 +32,6 @@
     <string name="more_city">更多城市。。。</string>
     <string name="town_name_with_city">%1$s (%2$s)</string>
     <string name="city_name_with_brace">(%1$s)</string>
-    <string name="error_no_city">您还没有选择城市，先去添加一个城市吧！</string>
+    <string name="error_no_city">您还没有选择城市，按OK/确认键去添加一个城市吧！</string>
     <string name="hourly_forecast_now">现在</string>
 </resources>

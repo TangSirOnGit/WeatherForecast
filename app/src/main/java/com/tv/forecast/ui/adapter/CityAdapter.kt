@@ -21,6 +21,7 @@ class CityAdapter(var items:List<City>, val itemClick: (City) -> Unit):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindForecast(items[position])
+        holder.view.isFocusable = true
     }
 
     override fun getItemCount(): Int = items.size
@@ -43,6 +44,13 @@ class CityAdapter(var items:List<City>, val itemClick: (City) -> Unit):
                 }
 
                 view.setOnClickListener { itemClick(this) }
+                view.setOnFocusChangeListener { view, b ->
+                    if (b){
+                        view.setBackgroundResource(R.drawable.city_item_selected)
+                    }else{
+                        view.setBackgroundResource(R.drawable.city_item_normal)
+                    }
+                }
             }
         }
     }
