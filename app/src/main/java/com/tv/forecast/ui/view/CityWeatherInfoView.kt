@@ -28,7 +28,7 @@ class CityWeatherInfoView(context: Context, val cityAreaCode: String) : Relative
     init {
         init(null, 0)
     }
-
+    val defaultWeatherType = 99
     val TAG = "CityWeatherInfoView"
 
     private fun init(attrs: AttributeSet?, defStyle: Int) {
@@ -40,16 +40,23 @@ class CityWeatherInfoView(context: Context, val cityAreaCode: String) : Relative
     }
 
     fun updateWeatherInfo() {
+        noticeWeatherUpdated(defaultWeatherType)
+        weatherContent.visibility = View.INVISIBLE
+        loadingView.visibility = View.VISIBLE
+        loadingView.start()
         doAsync {
             val weather = RequestWeatherCommand(cityAreaCode).execute()
             val hourly = RequestDetailCommand(cityAreaCode).execute()
             uiThread {
+                loadingView.stop()
+                loadingView.visibility = View.INVISIBLE
                 if (weather != null && hourly != null) {
                     noticeWeatherUpdated(weather.weatherCode.toInt())
                     updateWeatherView(weather)
                     updateHourlyForecast(hourly)
+                    weatherContent.visibility = View.VISIBLE
                 } else {
-                    noticeWeatherUpdated(99)
+                    noticeWeatherUpdated(defaultWeatherType)
                     showErrorInfo()
                 }
             }

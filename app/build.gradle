@@ -37,5 +37,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:leanback-v17:$support_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.victor:lib:1.0.4'
     testCompile 'junit:junit:4.12'
 }

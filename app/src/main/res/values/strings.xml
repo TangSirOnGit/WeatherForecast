@@ -27,11 +27,12 @@
     <string name="air_quality_co">CO：%1$s</string>
     <string name="air_quality_o3">O3：%1$s</string>
     <string name="error_query_data_fail">获取天气数据失败，稍后再试！</string>
-    <string name="saved_city_page_title">按确定键删除选定城市！</string>
-    <string name="search_hint">输入拼音首字母，拼音或者城市名称都可以搜索您所在的城市！</string>
+    <string name="saved_city_page_title">按确定键可删除已经添加的城市！</string>
+    <string name="search_hint">输入城市名称、拼音或者拼音首字母</string>
     <string name="more_city">更多城市。。。</string>
     <string name="town_name_with_city">%1$s (%2$s)</string>
     <string name="city_name_with_brace">(%1$s)</string>
     <string name="error_no_city">您还没有选择城市，按OK/确认键去添加一个城市吧！</string>
     <string name="hourly_forecast_now">现在</string>
+    <string name="setting_page_title">城市</string>
 </resources>

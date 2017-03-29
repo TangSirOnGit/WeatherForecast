@@ -5,40 +5,52 @@
         android:id="@+id/weatherMainPage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/default_bg_image"
+        android:background="@mipmap/setting_page_background"
         tools:context="com.tv.forecast.ui.CitySettingActivity">
+    <TextView
+            android:id="@+id/settingPageTitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentTop="true"
+            android:text="@string/setting_page_title"
+            android:textSize="40sp"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <com.tv.forecast.ui.view.SavedCityView
-            android:id="@+id/savedCityView"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="60dp"
-            android:layout_width="500dp"
-            android:layout_height="wrap_content">
-    </com.tv.forecast.ui.view.SavedCityView>
+    <LinearLayout
+            android:id="@+id/settingPageContent"
+            android:layout_below="@id/settingPageTitle"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <com.tv.forecast.ui.view.CitySearchView
+            android:id="@+id/citySearchView"
+            android:layout_width="650dp"
+            android:layout_height="match_parent">
+    </com.tv.forecast.ui.view.CitySearchView>
 
     <ImageView
             android:id="@+id/settingPageSpacer"
-            android:layout_toRightOf="@id/savedCityView"
+            android:layout_toRightOf="@id/citySearchView"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="60dp"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
             android:background="@drawable/image_header_vertical_seperator"/>
 
-    <com.tv.forecast.ui.view.CitySearchView
-            android:id="@+id/citySearchView"
+    <com.tv.forecast.ui.view.SavedCityView
+            android:id="@+id/savedCityView"
             android:layout_toRightOf="@id/settingPageSpacer"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="60dp"
-            android:layout_width="600dp"
+            android:layout_width="400dp"
             android:layout_height="match_parent"
             android:focusable="true">
 
-    </com.tv.forecast.ui.view.CitySearchView>
-
+    </com.tv.forecast.ui.view.SavedCityView>
+    </LinearLayout>
 </RelativeLayout>

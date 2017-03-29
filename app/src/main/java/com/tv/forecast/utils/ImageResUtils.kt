@@ -57,17 +57,21 @@ class ImageResUtils {
 
     fun getBgImageResId(weatherCode: Int): Int{
         when (weatherCode) {
-            0 -> return R.mipmap.bg_image_sunny_01
-            2 ->  return R.mipmap.bg_image_sunny_02
+            0,2 -> return R.mipmap.bg_image_sunny_01
+            1,3 ->  return R.mipmap.bg_image_sunny_02
             4 -> return R.mipmap.bg_image_cloudly_04
-            in 5..6 -> return R.mipmap.bg_image_cloudly_56
-            in 7..8 -> return R.mipmap.bg_image_cloudly_78
+            5 -> return R.mipmap.bg_image_cloudly_05
+            6 -> return R.mipmap.bg_image_cloudly_06
+            7 -> return R.mipmap.bg_image_cloudly_07
+            8 -> return R.mipmap.bg_image_cloudly_08
             9 -> return R.mipmap.bg_image_cloudly_09
             10 -> return R.mipmap.bg_image_rainly_10
             11 -> return R.mipmap.bg_image_flash_11
-            in 13..15 ->return R.mipmap.bg_image_rain_131415
-            in 20..23 -> return R.mipmap.bg_image_snow_20_23
-            else -> return R.mipmap.default_bg_image
+            in 12..19 ->return R.mipmap.bg_image_rain_131415
+            in 20..25 -> return R.mipmap.bg_image_snow_20_23
+            26,27 -> return R.mipmap.bg_image_2627
+            30 -> return R.mipmap.bg_image_fog_30
+            else -> return R.mipmap.bg_image_default
         }
     }
 }

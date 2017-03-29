@@ -5,7 +5,7 @@
         android:id="@+id/weatherMainPage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/default_bg_image"
+        android:background="@mipmap/bg_image_default"
         tools:context="com.tv.forecast.ui.MainActivity">
 
     <android.support.v4.view.ViewPager
